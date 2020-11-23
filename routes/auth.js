@@ -24,11 +24,11 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
   if (!email) {
     return res
       .status(400)
-      .render("signup", { errorMessage: "Please provide your email" });
+      .render("auth/signup", { errorMessage: "Please provide your email" });
   }
 
   if (password.length < 8) {
-    return res.status(400).render("signup", {
+    return res.status(400).render("auth/signup", {
       errorMessage: "Your password needs to be at least 8 characters",
     });
   }
@@ -65,7 +65,7 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
       .then((user) => {
         // binds the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        // res.redirect("/");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
@@ -95,33 +95,33 @@ router.post("/login", shouldNotBeLoggedIn, (req, res) => {
   if (!email) {
     return res
       .status(400)
-      .render("login", { errorMessage: "Please provide your email" });
+      .render("auth/login", { errorMessage: "Please provide your email" });
   }
 
   //   * Here we use the same logic as above - either length based parameters or we check the strength of a password
-  if (password.length < 8) {
-    return res.status(400).render("login", {
-      errorMessage: "Your password needs to be at least 8 characters",
-    });
-  }
+  // if (password.length < 8) {
+  //   return res.status(400).render("auth/login", {
+  //     errorMessage: "Your password needs to be at least 8 characters",
+  //   });
+  // }
 
   User.findOne({ email })
     .then((user) => {
       if (!user) {
         return res
           .status(400)
-          .render("login", { errorMessage: "Wrong credentials" });
+          .render("auth/login", { errorMessage: "Email does not exist" });
       }
 
       bcrypt.compare(password, user.password).then((isSamePassword) => {
         if (!isSamePassword) {
           return res
             .status(400)
-            .render("login", { errorMessage: "Wrong credentials" });
+            .render("auth/login", { errorMessage: "Password is not correct" });
         }
         req.session.user = user;
         // req.session.user = user._id ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
+        // return res.redirect("/");
       });
     })
     .catch((err) => {
