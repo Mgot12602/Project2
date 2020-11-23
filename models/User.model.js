@@ -22,7 +22,7 @@ const userSchema = new Schema({
   rides: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Receipt",
+      ref: "Rides",
     },
   ],
 });
