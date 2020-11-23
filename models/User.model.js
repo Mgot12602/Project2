@@ -12,6 +12,7 @@ const userSchema = new Schema({
   surname: String,
   taxId: String,
   companyName: String,
+  companyAdress: String,
   receipts: [
     {
       type: Schema.Types.ObjectId,

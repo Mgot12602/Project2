@@ -29,6 +29,9 @@ app.use("/auth", authRoutes);
 const overviewReceiptRoutes = require("./routes/overview-receipt");
 app.use("/overview-receipts", overviewReceiptRoutes);
 
+const profileRoutes = require("./routes/profile.js");
+app.use("/profile", profileRoutes);
+
 // ❗ To handle errors. Routes that dont exist or errors that you handle in specfic routes
 require("./error-handling")(app);
 
