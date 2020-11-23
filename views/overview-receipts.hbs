@@ -1,0 +1,22 @@
+<a href="/profile">Check your profile</a>
+<a href="/logout">Logout</a>
+
+<h1>Your Receipts</h1>
+
+<a href="#/rides">Check your Rides</a>
+
+<a href="/newReceipt">Create a new Receipt</a>
+
+{{#each receipts}}
+
+<div>
+  <img src="{{image}}" alt="receipt image">
+  <h3>{{title}}</h3>
+  <h4>{{category}}</h4>
+  <h4>{{date}}</h4>
+  <a href="/receipts/{{id}}">See details</a>
+  <a href="/profile/update-receipt">Update receipt</a>
+  <a href="/profile/delete-receipt">Delete receipt</a>
+</div>
+
+{{/each}}
