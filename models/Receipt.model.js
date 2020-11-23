@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const receiptSchema = new Schema({
   image: {
     type: String,
-    required: true,
+    //required: true,
   },
   title: {
     type: String,

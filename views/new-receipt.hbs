@@ -1,26 +1,28 @@
+<a href="/">HOME</a>
+
 <h3>Create a new receipt</h3>
 
 <form action="/main/new-receipt" method="POST">
-
-  <form method="POST" action="/upload" enctype="multipart/form-data">
-    <input type="file" name="imageUrl" accept="image/png, image/jpg">
-    <button type="submit">Save Image</button>
-  </form>
-
+  {{!<form method="POST" action="/upload" enctype="multipart/form-data">
+ <input type="file" name="imageUrl" accept="image/png, image/jpg">
+ <button type="submit">Save Image</button>
+</form>}}
+  <br>
   <label for="">Title</label>
   <input type="text" name="title">
-
+  <br>
   <label for="">Category</label>
   <input type="text" name="category">
-
+  <p>Possible Categories: work euipment, workspace, car, hardware, software, catering, other</p>
+  <br>
   <label for="">Date</label>
   <input type="date" name="date">
-
+  <br>
   <label for="">Amount in €</label>
   <input type="number" name="amount">
-
+  <br>
   <label for="">Comment</label>
   <input type="text" name="comment">
-
+  <br>
   <button type="submit">Create your receipt</button>
 </form>

@@ -32,6 +32,9 @@ app.use("/overview-receipts", overviewReceiptRoutes);
 const profileRoutes = require("./routes/profile.js");
 app.use("/profile", profileRoutes);
 
+const receiptRoutes = require("./routes/receipt.js");
+app.use("/main", receiptRoutes);
+
 // ❗ To handle errors. Routes that dont exist or errors that you handle in specfic routes
 require("./error-handling")(app);
 
