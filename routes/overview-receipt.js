@@ -3,7 +3,7 @@ const Receipt = require("../models/Receipt.model");
 const router = require("express").Router();
 
 // * Need to check for MY receipts
-router.get("/", isLoggedIn, (req, res) => {
+router.get("/main", isLoggedIn, (req, res) => {
   Receipt.find() // only my receipts
     .sort({ date: -1 })
     //.limit(10)
