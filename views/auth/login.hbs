@@ -1,13 +1,27 @@
+<nav>
+   <ul>
+      <li><a href="/auth/login">LOGIN</a></li>
+      <li><a href="/auth/signup">SIGNUP</a></li>
+      <li><a href="/auth/logout">LOGOUT</a></li>
+      <li><a href="/">HOME</a></li>
+
+   </ul>
+</nav>
+<br>
+<H1>Welcome to GOceipt</H1>
+<h3>Organize your receipts and rides on the Go and do your tax declaration in one click</h3>
+<h4>The perfect solution for freelancers who spend their time in what really matters</h4>
+<br>
+<H2>Please log in:</H2>
 <form action="/auth/login" method="POST">
-   <label for="username">username</label>
-   <input type="text" id="username" name="username">
+   <label for="email">email</label>
+   <input type="text" id="email" name="email">
    <label for="password">password</label>
    <input type="password" id="password" name="password">
-
    <button type="submit">Submit</button>
 </form>
+<br>
+<h3>New user? <a href="/auth/signup">Register</a></h3>
 
 
-
-
-
+{{errorMessage}}
