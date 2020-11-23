@@ -1,4 +1,6 @@
 const Receipt = require("../models/Receipt.model");
+const shouldNotBeLoggedIn = require("../middlewares/shouldNotBeLoggedIn");
+const isLoggedIn = require("../middlewares/isLoggedIn");
 
 const router = require("express").Router();
 
