@@ -26,6 +26,9 @@ app.use("/", index);
 const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
 
+const overviewReceiptRoutes = require("./routes/overview-receipt");
+app.use("/overview-receipts", overviewReceiptRoutes);
+
 // ❗ To handle errors. Routes that dont exist or errors that you handle in specfic routes
 require("./error-handling")(app);
 
