@@ -65,7 +65,8 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
       .then((user) => {
         // binds the user to the session object
         req.session.user = user;
-        // res.redirect("/");
+        console.log("You are now registered and logged in");
+        return res.redirect("/main");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
@@ -120,8 +121,9 @@ router.post("/login", shouldNotBeLoggedIn, (req, res) => {
             .render("auth/login", { errorMessage: "Password is not correct" });
         }
         req.session.user = user;
+        console.log("You are now legged in");
         // req.session.user = user._id ! better and safer but in this case we saving the entire user object
-        // return res.redirect("/");
+        return res.redirect("/main");
       });
     })
     .catch((err) => {
@@ -140,7 +142,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
         .status(500)
         .render("auth/logout", { errorMessage: err.message });
     }
-    res.redirect("/");
+    res.render("auth/login", { errorMessage: "Now you are logged out" });
   });
 });
 
