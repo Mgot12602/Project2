@@ -28,7 +28,7 @@ const receiptSchema = new Schema({
   amount: Number,
   comment: String,
   user: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "User",
   },
 });
