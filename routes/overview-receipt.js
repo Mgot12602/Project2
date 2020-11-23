@@ -5,7 +5,7 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 const router = require("express").Router();
 
 // * Need to check for MY receipts
-router.get("/main", isLoggedIn, (req, res) => {
+router.get("/", isLoggedIn, (req, res) => {
   Receipt.find(req.session.user._id) // only my receipts
     .sort({ date: -1 })
     //.limit(10)
