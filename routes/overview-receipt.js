@@ -4,12 +4,12 @@ const router = require("express").Router();
 
 // * Need to check for MY receipts
 router.get("/", isLoggedIn, (req, res) => {
-  Receipt.find()
+  Receipt.find() // only my receipts
     .sort({ date: -1 })
-    .limit(10)
+    //.limit(10)
     //.populate("")
     .then((receipts) => {
-      console.log("posts:", receipts);
+      console.log("receipts:", receipts);
       res.render("overview-receipts", { receipts });
     });
 });
