@@ -23,7 +23,7 @@ const receiptSchema = new Schema({
   },
   date: {
     type: Date,
-    default: new Date(),
+    default: Date.now(),
   },
   amount: Number,
   comment: String,
