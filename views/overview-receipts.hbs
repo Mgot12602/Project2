@@ -10,10 +10,10 @@
 {{#each receipts}}
 
 <div>
-  <img src="{{image}}" alt="receipt image">
-  <h3>{{title}}</h3>
-  <h4>{{category}}</h4>
-  <h4>{{date}}</h4>
+  <img src="{{this.image}}" alt="receipt image">
+  <h3>{{this.title}}</h3>
+  <h4>{{this.category}}</h4>
+  <h4>{{this.date}}</h4>
   <a href="/receipts/{{id}}">See details</a>
   <a href="/main/update-receipt">Update receipt</a>
   <a href="/main/delete-receipt">Delete receipt</a>
