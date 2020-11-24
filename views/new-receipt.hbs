@@ -2,11 +2,9 @@
 
 <h3>Create a new receipt</h3>
 
-<form action="/main/new-receipt" method="POST">
-  {{!<form method="POST" action="/upload" enctype="multipart/form-data">
- <input type="file" name="imageUrl" accept="image/png, image/jpg">
- <button type="submit">Save Image</button>
-</form>}}
+<form action="/main/new-receipt" method="POST" enctype="multipart/form-data">
+  <label for="">Image</label>
+  <input type="file" name="image" accept="image/png, image/jpg">
   <br>
   <label for="">Title</label>
   <input type="text" name="title">

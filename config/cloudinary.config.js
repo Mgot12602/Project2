@@ -12,7 +12,7 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  folder: "Goceipt", // The name of the folder in cloudinary . You can name this whatever you want
+  folder: "Goceipt", // The name of the folder in cloudinary .
   allowedFormats: ["jpg", "png"],
   filename: function (req, res, cb) {
     cb(null, res.originalname); // The file on cloudinary will have the same name as the original file name

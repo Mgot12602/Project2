@@ -5,19 +5,19 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 
 const router = require("express").Router();
 
-// * Find receipt with value = user._id of porperty User
+// * Find receipt with porperty called user with value = user._id
 //router.get("/", isLoggedIn, (req, res) => {
-//  Receipt.find(req.session.user._id) // only my receipts
+//  Receipt.find(user.req.session.user._id) // only my receipts
 //    .sort({ date: -1 })
 //    //.limit(10)
-//    //.populate("")
+//    //.populate("user")
 //    .then((receipts) => {
 //      console.log("receipts:", receipts);
 //      res.render("overview-receipts", { receipts });
 //    });
 //});
 
-// instead of finding the receipt. Find the user and show his receipts
+// Find the user and show his receipts
 // populate the array of receipts
 router.get("/", isLoggedIn, (req, res) => {
   User.find(req.session.user._id) // only my receipts
