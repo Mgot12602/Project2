@@ -50,6 +50,38 @@ router.post(
   }
 );
 
+//GET AND UPDATE RECEIPT DETAILS
+router.get("/:id/update-receipt", isLoggedIn, (req, res) => {
+  const id = req.params.id;
+  Receipt.findById(id)
+    .then((receiptDetails) => {
+      console.log("Receipt:", receiptDetails);
+      res.render("update-receipt", { receiptDetails });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/overview-receipts");
+    });
+});
+
+router.post("/:id/update-receipt", isLoggedIn, (req, res) => {
+  const { title, category, date, amount, comment } = req.body;
+  Receipt.findByIdAndUpdate(
+    req.params.id,
+    {
+      title: title,
+      category: category,
+      date: date,
+      amount: amount,
+      comment: comment,
+    },
+    { new: true }
+  ).then((newAndUpdatedReceipt) => {
+    console.log("This is the updated receipt", newAndUpdatedReceipt);
+    res.redirect("/overview-receipt");
+  });
+});
+
 //GET RECEIPT DETAILS
 router.get("/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
