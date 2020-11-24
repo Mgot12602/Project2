@@ -55,7 +55,7 @@ router.get("/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
   Receipt.findById(id)
     .then((receiptDetails) => {
-      console.log("Receipt Id:", receiptDetails);
+      console.log("Receipt:", receiptDetails);
       res.render("details-receipt", { receiptDetails });
     })
     .catch((err) => {

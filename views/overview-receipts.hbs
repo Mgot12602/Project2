@@ -2,7 +2,32 @@
 <a href="/auth/logout">Logout</a>
 
 <h1>Your Receipts</h1>
-
+<h2>Sort by:
+  <form action="/overview-receipts/search" method="post">
+    <select id="sort" name="sort" value="date">
+      <option value="date">Date</option>
+      <option value="category">Category</option>
+      <option value="amount">Amount</option>
+      <option value="title">Title</option>
+    </select>
+    <select id="direction" name="direction" value="direction">
+      <option value="">Ascending</option>
+      <option value="-">Descending</option>
+    </select>
+    Show:
+    <select id="category" name="category" value="All categories">
+      <option value="">All categories</option>
+      <option value="work euipment">Work equipment</option>
+      <option value="workspace">Workspace</option>
+      <option value="car">Car</option>
+      <option value="hardware">Hardware</option>
+      <option value="software">Software</option>
+      <option value="catering">Catering</option>
+      <option value="other">Other</option>
+    </select>
+    <button type="submit">Search</button>
+  </form>
+</h2>
 <a href="#/rides">Check your Rides</a>
 
 <a href="/main/new-receipt">Create a new Receipt</a>
@@ -10,11 +35,11 @@
 {{#each receipts}}
 
 <div>
-  <img src="{{image}}" alt="receipt image">
-  <h3>{{title}}</h3>
-  <h4>{{category}}</h4>
-  <h4>{{date}}</h4>
-  <a href="/receipts/{{id}}">See details</a>
+  <img src="{{this.image}}" alt="receipt image">
+  <h3>{{this.title}}</h3>
+  <h4>{{this.category}}</h4>
+  <h4>{{this.date}}</h4>
+  <a href="/main/{{_id}}">See details</a>
   <a href="/main/update-receipt">Update receipt</a>
   <a href="/main/delete-receipt">Delete receipt</a>
 </div>
