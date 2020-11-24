@@ -4,6 +4,7 @@ const router = require("express").Router();
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const uploader = require("../config/cloudinary.config.js");
 
+//GET AND POST FOR NEW RECEIPT
 router.get("/new-receipt", isLoggedIn, (req, res) => {
   res.render("new-receipt");
 });
@@ -48,5 +49,19 @@ router.post(
     });
   }
 );
+
+//GET RECEIPT DETAILS
+router.get("/:id", isLoggedIn, (req, res) => {
+  const id = req.params.id;
+  Receipt.findById(id)
+    .then((receiptDetails) => {
+      console.log("Receipt:", receiptDetails);
+      res.render("details-receipt", { receiptDetails });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/overview-receipts");
+    });
+});
 
 module.exports = router;

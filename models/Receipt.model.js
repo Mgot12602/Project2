@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const receiptSchema = new Schema({
   image: {
     type: String,
-    //required: true,
+    required: true,
   },
   title: {
     type: String,
@@ -23,7 +23,7 @@ const receiptSchema = new Schema({
   },
   date: {
     type: Date,
-    default: new Date(),
+    default: Date.now(),
   },
   amount: Number,
   comment: String,

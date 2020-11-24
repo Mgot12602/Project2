@@ -1,0 +1,29 @@
+<ul>
+  <li><a href="/overview-receipt">BACK TO overview-receipt</a></li>
+  <li><a href="/auth/logout">LOGOUT</a></li>
+</ul>
+
+<h1>EDIT RECEIPT</h1>
+
+<form action="/main/update-receipt" method="POST" enctype="multipart/form-data">
+  <label for="">Image</label>
+  <input type="file" name="image" accept="image/png, image/jpg">
+  <br>
+  <label for="">Title</label>
+  <input type="text" name="title" value="{{receipts.name}}">
+  <br>
+  <label for="">Category</label>
+  <input type="text" name="category" value="{{receipts.category}}">
+  <p>Possible Categories: work euipment, workspace, car, hardware, software, catering, other</p>
+  <br>
+  <label for="">Date</label>
+  <input type="date" name="date" value="{{receipts.date}}">
+  <br>
+  <label for="">Amount in €</label>
+  <input type="number" name="amount" value="{{receipts.amount}}">
+  <br>
+  <label for="">Comment</label>
+  <input type="text" name="comment" value="{{receipts.comment}}">
+  <br>
+  <button type="submit">Update your receipt</button>
+</form>
