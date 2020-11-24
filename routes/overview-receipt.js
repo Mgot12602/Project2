@@ -25,12 +25,30 @@ router.get("/", isLoggedIn, (req, res) => {
 
 router.post("/search", isLoggedIn, (req, res) => {
   const { sort, direction, category } = req.body;
+  let categorySelector = category;
+  console.log("the category is", category);
+  if (category === "") {
+    console.log("all categories");
+    categorySelector = [
+      "work euipment",
+      "workspace",
+      "car",
+      "hardware",
+      "software",
+      "catering",
+      "other",
+    ];
+  }
+  console.log("This is the categorySelector", categorySelector);
   User.find(req.session.user._id) // only my receipts
     .populate({
       path: "receipts",
       select: "",
-      /*,
-      match: { category: "workspace" }*/ options: { sort: sort },
+
+      match: { category: { $in: categorySelector } },
+      options: {
+        sort: direction + sort,
+      },
     })
     .then((populatedUser) => {
       console.log("What we get after populating:", populatedUser);
