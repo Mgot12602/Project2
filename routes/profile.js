@@ -19,4 +19,30 @@ router.get("/edit", (req, res, next) => {
   });
 });
 
+router.post("/edit", shouldNotBeLoggedIn, (req, res) => {
+  const {
+    // email,
+    // password,
+    name,
+    surname,
+    taxId,
+    companyName,
+    companyAdress,
+  } = req.body;
+  User.findByIdAndUpdate(
+    req.session.user._id,
+    {
+      name: name,
+      surname: surname,
+      taxId: taxId,
+      companyName: companyName,
+      companyAdress: companyAdress,
+    },
+    { new: true }
+  ).then((newAndUpdatedUser) => {
+    console.log("This is the updated user info", newAndUpdatedUser);
+    res.redirect("/profile");
+  });
+});
+
 module.exports = router;
