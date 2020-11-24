@@ -5,21 +5,21 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 const User = require("../models/User.model");
 
 /* GET /profile page */
-router.get("/", (req, res, next) => {
+router.get("/", isLoggedIn, (req, res, next) => {
   User.findById(req.session.user._id).then((userInfo) => {
     console.log("User info", userInfo);
     res.render("profile/profile", { user: userInfo });
   });
 });
 
-router.get("/edit", (req, res, next) => {
+router.get("/edit", isLoggedIn, (req, res, next) => {
   User.findById(req.session.user._id).then((userInfo) => {
     console.log("User info", userInfo);
     res.render("profile/edit-profile", { user: userInfo });
   });
 });
 
-router.post("/edit", shouldNotBeLoggedIn, (req, res) => {
+router.post("/edit", isLoggedIn, (req, res) => {
   const {
     // email,
     // password,
