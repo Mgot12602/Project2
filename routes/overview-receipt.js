@@ -23,4 +23,21 @@ router.get("/", isLoggedIn, (req, res) => {
     });
 });
 
+router.post("/search", isLoggedIn, (req, res) => {
+  const { sort, direction, category } = req.body;
+  User.find(req.session.user._id) // only my receipts
+    .populate({
+      path: "receipts",
+      select: "",
+      /*,
+      match: { category: "workspace" }*/ options: { sort: sort },
+    })
+    .then((populatedUser) => {
+      console.log("What we get after populating:", populatedUser);
+      const receipts = populatedUser[0].receipts;
+      console.log("receipts: ", receipts);
+      res.render("overview-receipts", { receipts });
+    });
+});
+
 module.exports = router;
