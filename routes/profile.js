@@ -11,4 +11,12 @@ router.get("/", (req, res, next) => {
     res.render("profile/profile", { user: userInfo });
   });
 });
+
+router.get("/edit", (req, res, next) => {
+  User.findById(req.session.user._id).then((userInfo) => {
+    console.log("User info", userInfo);
+    res.render("profile/edit-profile", { user: userInfo });
+  });
+});
+
 module.exports = router;

@@ -1,0 +1,40 @@
+<nav>
+  <ul>
+    <li><a href="/profile">BACK TO PROFILE</a></li>
+    <li><a href="/auth/logout">LOGOUT</a></li>
+
+    <h1>EDIT PROFILE</h1>
+
+    {{!-- <ul>
+      <li>Email:{{user.email}}</li>
+      <li>Name:{{user.name}}</li>
+      <li>Surname:{{user.surname}}</li>
+      <li>Tax ID:{{user.taxId}}</li>gi
+      <li>Company Name:{{user.companyName}}</li>
+      <li>Company Address:{{user.companyAdress}}</li>
+
+    </ul> --}}
+    <form action="/edit-profile" method="POST">
+      {{!-- <label for="email">email</label>
+      <input type="text" id="email" name="email" value={{user.email}}>
+      <br>
+      <label for="password">password</label>
+      <input type="password" id="password" name="password">
+      <br> --}}
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" value="{{user.name}}">
+      <br><br>
+      <label for="surname">Surname</label>
+      <input type="text" id="surname" name="surname" value="{{user.surname}}">
+      <br><br>
+      <label for=" taxId">Tax ID</label>
+      <input type="text" id="taxId" name="taxId" value="{{user.taxId}}">
+      <br><br>
+      <label for=" companyName">Company Name</label>
+      <input type="text" id="companyName" name="companyName" value="{{user.companyName}}">
+      <br><br>
+      <label for="companyAdress">Company Address</label>
+      <input type="text" id="companyAdress" name="companyAdress" value="{{user.companyAdress}}">
+      <br><br>
+      <button type="submit">UPDATE</button>
+    </form>
