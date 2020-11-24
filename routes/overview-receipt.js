@@ -9,7 +9,12 @@ const router = require("express").Router();
 // populate the array of receipts
 router.get("/", isLoggedIn, (req, res) => {
   User.find(req.session.user._id) // only my receipts
-    .populate({ path: "receipts", options: { sort: "date" } })
+    .populate({
+      path: "receipts",
+      select: "",
+      /*,
+      match: { category: "workspace" }*/ options: { sort: "date" },
+    })
     .then((populatedUser) => {
       console.log("What we get after populating:", populatedUser);
       const receipts = populatedUser[0].receipts;
