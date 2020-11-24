@@ -84,6 +84,20 @@ router.post("/:id/update-receipt", isLoggedIn, (req, res) => {
   });
 });
 
+// DELETE RECEIPT
+router.get("/:id/delete-receipt", isLoggedIn, (req, res) => {
+  const id = req.params.id;
+  Receipt.findByIdAndRemove(id)
+    .then((deletedReceipt) => {
+      console.log("Deleted Receipt:", deletedReceipt);
+      res.redirect("/");
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/overview-receipts");
+    });
+});
+
 //GET RECEIPT DETAILS
 router.get("/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
