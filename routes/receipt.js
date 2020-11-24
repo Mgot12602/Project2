@@ -66,6 +66,8 @@ router.get("/:id/update-receipt", isLoggedIn, (req, res) => {
 
 router.post("/:id/update-receipt", isLoggedIn, (req, res) => {
   const { title, category, date, amount, comment } = req.body;
+  console.log("req.body: ", req.body);
+  console.log(req.params.id);
   Receipt.findByIdAndUpdate(
     req.params.id,
     {
@@ -78,7 +80,7 @@ router.post("/:id/update-receipt", isLoggedIn, (req, res) => {
     { new: true }
   ).then((newAndUpdatedReceipt) => {
     console.log("This is the updated receipt", newAndUpdatedReceipt);
-    res.redirect("/overview-receipt");
+    res.redirect(`/main/${req.params.id}`);
   });
 });
 
