@@ -3,6 +3,8 @@
   --primary-color: #ffd166;
   --secondary-color: #06d6a0;
   /* Example: We need to use color: var(--background-color) to use the background color; */
+  /* Example: We need to use color: var(--primary-color) to use the primary color; */
+  /* Example: We need to use color: var(--secondary-color) to use the secondary color; */
 }
 
 * {
@@ -13,27 +15,107 @@
 h1 {
   font-size: 4rem;
   margin: 20px;
+  color: white;
 }
 
 h2 {
   font-size: 3rem;
   margin: 20px;
+  color: white;
 }
 h3 {
   font-size: 2.5rem;
   margin: 20px;
+  color: white;
 }
 h4 {
   font-size: 1.5rem;
   margin: 20px;
+  color: white;
 }
 body {
-  margin: 20px;
+  background-color: var(--background-color);
 }
 
 a {
   color: #00b7ff;
 }
+
+.nav-nav--login {
+  background-color: var(--primary-color);
+  height: 54px;
+}
+
+/* Dropdown copy pasted */
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
+/* .homebtn {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+} */
+
+.nav-dropbtn--login {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.nav-dropdown--login {
+  position: absolute;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  text-align: center;
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: var(--primary-color);
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* Show the dropdown menu on hover */
+.nav-dropdown--login:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.nav-dropdown--login:hover .nav-dropbtn--login {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+/* End of Dropdown copy pasted */
 
 /*# sourceMappingURL=style.css.map */
 
