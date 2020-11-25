@@ -3,10 +3,17 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const uploader = require("../config/cloudinary.config.js");
+const ChuckNorrisJoke = "https://api.chucknorris.io/jokes/random";
+const axios = require("axios");
 
 //GET AND POST FOR NEW RECEIPT
 router.get("/new-receipt", isLoggedIn, (req, res) => {
-  res.render("new-receipt");
+  axios.get(ChuckNorrisJoke).then((response) => {
+    console.log("response: ", response);
+    const jokeText = response.data.value;
+    const jokeImage = response.data.icon_url;
+    res.render("new-receipt", { jokeText, jokeImage });
+  });
 });
 
 router.post(
