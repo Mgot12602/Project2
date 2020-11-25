@@ -1,14 +1,38 @@
-body {
-  padding: 50px;
+:root {
+  --background-color: #073b4c;
+  --primary-color: #ffd166;
+  --secondary-color: #06d6a0;
+  /* Example: We need to use color: var(--background-color) to use the background color; */
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+h1 {
+  font-size: 4rem;
+  margin: 20px;
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 20px;
+}
+h3 {
+  font-size: 2.5rem;
+  margin: 20px;
+}
+h4 {
+  font-size: 1.5rem;
+  margin: 20px;
+}
+body {
+  margin: 20px;
 }
 
 a {
   color: #00b7ff;
-}
-
-h1 {
-  color: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
