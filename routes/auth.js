@@ -155,7 +155,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
         .status(500)
         .render("auth/logout", { errorMessage: err.message });
     }
-    res.render("auth/login", { errorMessage: "Now you are logged out" });
+    res.render("auth/login", { infoMessage: "Now you are logged out" });
   });
 });
 

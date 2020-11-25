@@ -20,6 +20,13 @@ router.get("/", isLoggedIn, (req, res) => {
       const receipts = populatedUser[0].receipts;
       console.log("receipts: ", receipts);
       res.render("overview-receipts", { receipts });
+    })
+    .catch((err) => {
+      console.log(err);
+      // in this case we are sending the error handling to the error handling middleware that is defined in the error handling file
+      // you can just as easily run the res.status that is commented out below
+      next(err);
+      // return res.status(500).render("login", { errorMessage: err.message });
     });
 });
 
@@ -55,6 +62,13 @@ router.post("/search", isLoggedIn, (req, res) => {
       const receipts = populatedUser[0].receipts;
       console.log("receipts: ", receipts);
       res.render("overview-receipts", { receipts });
+    })
+    .catch((err) => {
+      console.log(err);
+      // in this case we are sending the error handling to the error handling middleware that is defined in the error handling file
+      // you can just as easily run the res.status that is commented out below
+      next(err);
+      // return res.status(500).render("login", { errorMessage: err.message });
     });
 });
 
