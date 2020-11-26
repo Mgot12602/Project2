@@ -8,11 +8,13 @@ const axios = require("axios");
 
 //GET AND POST FOR NEW RECEIPT
 router.get("/new-receipt", isLoggedIn, (req, res) => {
+  let pageTitle = "NEW RECEIPT";
   axios.get(ChuckNorrisJoke).then((response) => {
     console.log("response: ", response);
     const jokeText = response.data.value;
     const jokeImage = response.data.icon_url;
-    res.render("new-receipt", { jokeText, jokeImage });
+
+    res.render("new-receipt", { jokeText, jokeImage, pageTitle: pageTitle });
   });
 });
 
@@ -60,10 +62,11 @@ router.post(
 //GET AND UPDATE RECEIPT DETAILS
 router.get("/:id/update-receipt", isLoggedIn, (req, res) => {
   const id = req.params.id;
+  let pageTitle = "RECEIPT DETAILS";
   Receipt.findById(id)
     .then((receiptDetails) => {
       console.log("Receipt:", receiptDetails);
-      res.render("update-receipt", { receiptDetails });
+      res.render("update-receipt", { receiptDetails, pageTitle: pageTitle });
     })
     .catch((err) => {
       console.log(err);
@@ -108,10 +111,11 @@ router.get("/:id/delete-receipt", isLoggedIn, (req, res) => {
 //GET RECEIPT DETAILS
 router.get("/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
+  let pageTitle = "RECEIPT DETAILS";
   Receipt.findById(id)
     .then((receiptDetails) => {
       console.log("Receipt:", receiptDetails);
-      res.render("details-receipt", { receiptDetails });
+      res.render("details-receipt", { receiptDetails, pageTitle: pageTitle });
     })
     .catch((err) => {
       console.log(err);

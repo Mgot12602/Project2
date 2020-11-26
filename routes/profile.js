@@ -6,16 +6,21 @@ const User = require("../models/User.model");
 
 /* GET /profile page */
 router.get("/", isLoggedIn, (req, res, next) => {
+  let pageTitle = "PROFILE";
   User.findById(req.session.user._id).then((userInfo) => {
     console.log("User info", userInfo);
-    res.render("profile/profile", { user: userInfo });
+    res.render("profile/profile", { user: userInfo, pageTitle: pageTitle });
   });
 });
 
 router.get("/edit", isLoggedIn, (req, res, next) => {
+  let pageTitle = "EDIT PROFILE";
   User.findById(req.session.user._id).then((userInfo) => {
     console.log("User info", userInfo);
-    res.render("profile/edit-profile", { user: userInfo });
+    res.render("profile/edit-profile", {
+      user: userInfo,
+      pageTitle: pageTitle,
+    });
   });
 });
 
