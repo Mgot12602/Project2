@@ -33,12 +33,18 @@ h4 {
   margin: 20px;
   color: white;
 }
+p {
+  font-size: 1rem;
+  margin: 20px;
+  color: white;
+}
+
 body {
   background-color: var(--background-color);
 }
 
 a {
-  color: #00b7ff;
+  color: var(--secondary-color);
 }
 
 .nav-nav--login {
