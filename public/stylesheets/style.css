@@ -102,6 +102,16 @@ a {
   color: white;
   border-style: none;
   padding: 5px 10px;
+  text-decoration: none;
+}
+.profile-submitbtn {
+  background-color: var(--secondary-color);
+  color: white;
+  border-style: none;
+  padding: 5px 10px;
+  text-decoration: none;
+  width: 100px;
+  margin: 20px;
 }
 
 .login-container-title {
@@ -462,8 +472,33 @@ img {
   text-align: center;
 }
 
+.update-receipt-form {
+  height: 300px;
+  width: 30px;
+  margin: 10px;
+}
+.update-receipt-form label {
+  color: white;
+  margin-top: 10px;
+}
+.update-receipt-form input {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 4px 4px purple;
+  border: none;
+}
+
 .details-receipt-container {
   height: 85vh;
+  width: 100%;
+  display: flex;
+  margin: 5px;
+
+  flex-direction: column;
+}
+.profile-container {
+  height: 250px;
   width: 100%;
   display: flex;
 

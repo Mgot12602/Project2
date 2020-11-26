@@ -1,23 +1,19 @@
-<nav>
-  <ul>
-    <li><a href="/overview-receipts">BACK TO OVERVIEW</a></li>
-    <li><a href="/auth/logout">LOGOUT</a></li>
+<div class="profile-container">
 
-    <h1>PROFILE DETAILS</h1>
 
-    <ul>
-      <li>Email:{{user.email}}</li>
-      <br><br>
-      <li>Name:{{user.name}}</li>
-      <br><br>
-      <li>Surname:{{user.surname}}</li>
-      <br><br>
-      <li>Tax ID:{{user.taxId}}</li>
-      <br><br>
-      <li>Company Name:{{user.companyName}}</li>
-      <br><br>
-      <li>Company Address:{{user.companyAdress}}</li>
-      <br><br>
+  <p>Email: <span style="color:var(--secondary-color)">{{user.email}}</span> </p>
 
-    </ul>
-    <a href="/profile/edit">EDIT YOUR PROFILE</a>
+  <p>Name: <span style="color:var(--secondary-color)">{{user.name}}</span></p>
+
+  <p>Surname: <span style="color:var(--secondary-color)">{{user.surname}}</span></p>
+
+  <p>Tax ID: <span style="color:var(--secondary-color)">{{user.taxId}}</span></p>
+
+  <p>Company Name: <span style="color:var(--secondary-color)">{{user.companyName}}</span></p>
+
+  <p>Company Address: <span style="color:var(--secondary-color)">{{user.companyAdress}}</span></p>
+
+
+
+  <a class="profile-submitbtn" href="/profile/edit">EDIT YOUR PROFILE</a>
+</div>
