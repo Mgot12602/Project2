@@ -25,27 +25,30 @@
 </div> --}}
 {{!-- End of the added navbar --}}
 
-<br>
-<H1>Welcome to GOceipt</H1>
-<h3>Organize your receipts and rides on the Go and do your tax declaration in one click</h3>
-<h4>The perfect solution for freelancers who spend their time in what really matters</h4>
-<br>
-<H2>Please log in:</H2>
-<form action="/auth/login" method="POST">
-   <label for="email">email</label>
-   <input type="text" id="email" name="email">
-   <label for="password">password</label>
-   <input type="password" id="password" name="password">
-   <button type="submit">Submit</button>
-</form>
-<br>
-<h3>New user? <a href="/auth/signup">Register</a></h3>
 
-<h1>This is a test H1</h1>
-<h2>This is a test H2</h2>
-<h3>This is a test H3</h3>
-<h4>This is a test H4</h4>
+<div class="login-container-general">
+   <div class="login-container-blackblock">
+      <form action="/auth/login" method="POST">
+         <div class="login-container-forms">
+            <input class="box-shadow" type="text" id="email" name="email" placeholder="Email">
+            <input class="box-shadow" type="password" id="password" name="password" placeholder="Password">
+            <button class="login-input-submitbtn" type="submit">Login</button>
+         </div>
+      </form>
+   </div>
+   <div class="login-container-title box-shadow">
+      <h4 class=>Everything is Possible</h4>
+      <img src="/images/with-chuck-norris_small.png" alt="" style="width:170px;">
+      <h4>even bring order to your receipts</h4>
+
+   </div>
+   <div class="login-register-img-block">
+      <a href=" /auth/signup"><img src="/images/chuck-register.png" alt="" style="height:250px;"></a>
+   </div>
 
 
-{{infoMessage}}
-{{errorMessage}}
+
+   {{infoMessage}}
+   {{errorMessage}}
+
+</div>

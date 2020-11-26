@@ -52,14 +52,85 @@ a {
   display: block;
   background-color: var(--primary-color);
   text-align: center;
+  height: 5vh;
+  min-height: 30px;
+  margin: 0;
 }
 
 .nav-nav--login {
   background-color: var(--primary-color);
-  height: 54px;
+  /* height: 54px; */
+  height: 10vh;
+  min-height: 54px;
 }
 
 /* Dropdown copy pasted */
+.login-container-general {
+  background-image: url("/images/space-background.png");
+  /* background-color: blue; */
+  background-repeat: repeat;
+  height: 85vh;
+}
+
+.login-container-blackblock {
+  height: 10vh;
+  min-width: 400px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-container-forms {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-input-submitbtn {
+  background-color: var(--secondary-color);
+  color: white;
+  border-style: none;
+  padding: 5px 10px;
+}
+
+.login-container-title {
+  background-color: black;
+  min-width: 350px;
+  max-width: 400px;
+  margin: 25px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+}
+.box-shadow {
+  box-shadow: 4px 4px purple;
+  border: none;
+}
+
+.gradient {
+  background-color: red;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.login-register-img-block {
+  margin: 0 auto;
+  width: 200px;
+}
+.login-register-img-block a img {
+  position: absolute;
+  bottom: 0;
+}
 
 img {
   margin: 0;
@@ -76,7 +147,7 @@ img {
 } */
 
 .nav-dropbtn--login {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
   padding: 10px;
   font-size: 16px;
