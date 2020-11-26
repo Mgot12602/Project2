@@ -15,7 +15,8 @@ const shouldNotBeLoggedIn = require("../middlewares/shouldNotBeLoggedIn");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 
 router.get("/signup", shouldNotBeLoggedIn, (req, res) => {
-  res.render("auth/signup");
+  let pageTitle = "SIGNUP";
+  res.render("auth/signup", { pageTitle });
 });
 
 router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
@@ -100,7 +101,8 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
 });
 
 router.get("/login", shouldNotBeLoggedIn, (req, res) => {
-  res.render("auth/login");
+  let pageTitle = "LOGIN";
+  res.render("auth/login", { pageTitle });
 });
 
 router.post("/login", shouldNotBeLoggedIn, (req, res) => {

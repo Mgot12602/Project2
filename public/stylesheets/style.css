@@ -47,6 +47,13 @@ a {
   color: var(--secondary-color);
 }
 
+.nav-title {
+  font-size: 2rem;
+  display: block;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
 .nav-nav--login {
   background-color: var(--primary-color);
   height: 54px;
