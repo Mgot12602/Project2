@@ -462,10 +462,28 @@ img {
   text-align: center;
 }
 
+.update-receipt-form {
+  height: 300px;
+  width: 30px;
+  margin: 10px;
+}
+.update-receipt-form label {
+  color: white;
+  margin-top: 10px;
+}
+.update-receipt-form input {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 4px 4px purple;
+  border: none;
+}
+
 .details-receipt-container {
   height: 85vh;
   width: 100%;
   display: flex;
+  margin: 5px;
 
   flex-direction: column;
 }

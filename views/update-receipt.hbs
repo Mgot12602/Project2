@@ -1,28 +1,25 @@
-<ul>
-  <li><a href="/overview-receipt">BACK TO overview-receipt</a></li>
-  <li><a href="/auth/logout">LOGOUT</a></li>
-</ul>
+<div class="details-receipt-container">
+  <img src="{{receiptDetails.image}}" alt="receipt image" style="width:380px">
 
-<h1>EDIT RECEIPT</h1>
+  <form class="update-receipt-form" action="/main/{{receiptDetails._id}}/update-receipt" method="POST">
 
-<form action="/main/{{receiptDetails._id}}/update-receipt" method="POST">
-  <label for="">Title</label>
-  <input type="text" name="title" value="{{receiptDetails.title}}">
-  <br>
-  <label for="">Category</label>
-  <input type="text" name="category" value="{{receiptDetails.category}}">
-  <p>Possible Categories: work euipment, workspace, car, hardware, software, catering, other</p>
-  <br>
-  <label for="">Date</label>
-  <input type="date" name="date" value="{{receiptDetails.date}}">
-  <br>
-  <label for="">Amount in €</label>
-  <input type="number" name="amount" value="{{receiptDetails.amount}}">
-  <br>
-  <label for="">Comment</label>
-  <input type="text" name="comment" value="{{receiptDetails.comment}}">
-  <br>
-  <button type="submit">Update your receipt</button>
-</form>
+    <label for="">Title</label>
+    <input type="text" name="title" value="{{receiptDetails.title}}">
 
-<img src="{{receiptDetails.image}}" alt="receipt image">
+    <label for="">Category</label>
+    <input type="text" name="category" value="{{receiptDetails.category}}">
+    {{!-- <p>Possible Categories: Work equipment, Workspace, Car, Hardware, Software, Catering, Other</p> --}}
+
+    <label for="">Date</label>
+    <input type="date" name="date" value="{{receiptDetails.date}}">
+
+    <label for="">Amount in €</label>
+    <input type="number" name="amount" value="{{receiptDetails.amount}}">
+
+    <label for="">Comment</label>
+    <input type="text" name="comment" value="{{receiptDetails.comment}}">
+
+    <button class="profile-submitbtn" type="submit">Update your receipt</button>
+  </form>
+
+</div>
