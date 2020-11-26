@@ -8,7 +8,7 @@
 }
 
 * {
-  margin: 0;
+  margin: 0 auto;
   box-sizing: border-box;
   font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -56,6 +56,7 @@ a {
   min-height: 30px;
   margin: 0;
   color: white;
+  border: none;
 }
 
 .nav-nav--login {
