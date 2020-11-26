@@ -1,7 +1,8 @@
 {{! FILTER AND SORT}}
-<section id="section-filter-sort">
 
-  <form id="form-filter-sort" action="/overview-receipts/search" method="post">
+
+<section id="section-filter-sort">
+  <form class="content-body" action="/overview-receipts/search" method="post">
 
     <div id="filter">
       <select id="category" name="category" value="">
@@ -14,40 +15,60 @@
         <option value="catering">Catering</option>
         <option value="other">Other</option>
       </select>
-      <button type="submit">Filter</button>
     </div>
 
     <div id="sort">
-      <select id="sort" name="sort" value="date">
+      <p id="text-sort">Sort:</p>
+      <select id="sort-by" name="sort" value="date">
         <option value="date">Date</option>
         <option value="category">Category</option>
         <option value="amount">Amount</option>
         <option value="title">Title</option>
       </select>
-      <select id="direction" name="direction" value="direction">
-        <option value="">Ascending</option>
-        <option value="-">Descending</option>
+      <select id="order" name="direction" value="direction">
+        <option value="">↑</option>
+        <option value="-">↓</option>
       </select>
+      <button type="submit">Filter</button>
     </div>
 
   </form>
 
 </section>
 
+{{! RECEIPTS}}
+<section id="section-receipt-overview">
+  {{#each receipts}}
+  <div id="single-receipt">
+    <div class="content-body">
+      {{! See Details}}
+      <a id="btn-receipt-details" href="/main/{{_id}}"><img src="/images/icon-receipt.png" alt="document icon"
+          style="height: 60px;"></a>
 
-{{#each receipts}}
+      <div id="receipt-infos">
+        <div id="receipt-title-amount">
+          <h3 id="text-title">{{this.title}}</h3>
+          <h3 id="text-amount">€ {{this.amount}}</h4>
+        </div>
+        <div id="receipt-category-date">
+          <h4 id="text-category">{{this.category}}</h4>
+          {{!<h4>{{this.date}}{{!</h4>}}
+        </div>
+      </div>
 
-<div>
-  <img src="{{this.image}}" alt="receipt image">
-  <h3>{{this.title}}</h3>
-  <h4>{{this.category}}</h4>
-  <h4>{{this.date}}</h4>
-  <a href="/main/{{_id}}">See details</a>
-  <a href="/main/{{_id}}/update-receipt">Update receipt</a>
-  <a href="/main/{{_id}}/delete-receipt">Delete receipt</a>
-</div>
+      <div id="update-delete-receipt">
+        {{! Update Receipt}}
+        <a href="/main/{{_id}}/update-receipt"><button id="btn-update-receipt"><img src="/images/icon-pen.png"
+              alt="pen icon" style="height: 30px;"></button></a>
+        {{! Delete Receipt}}
+        <a href="/main/{{_id}}/delete-receipt"><button id="btn-delete-receipt"><img src="/images/icon-trash.png"
+              alt="trash icon" style="height: 30px;"></button></a>
+      </div>
 
-{{/each}}
+    </div>
+  </div>
+  {{/each}}
+</section>
+<a id="btn-add-receipt" href="/main/new-receipt"><img src="/images/Chuck-add.png" alt="Chuck Norris icon"></a>
 
 {{! ADD NEW RECEIPT}}
-<a href="/main/new-receipt">Create a new Receipt</a>

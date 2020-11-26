@@ -132,6 +132,192 @@ img {
 
 /*# sourceMappingURL=style.css.map */
 
+/* RECEIPT OVERVIEW */
+#section-filter-sort {
+  width: 400px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*background-color: yellow;*/
+}
+
+.content-body {
+  width: 90%;
+  height: 50%;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /*background-color: turquoise;*/
+}
+
+#filter {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  /*background-color: salmon;*/
+}
+
+#sort {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  /*background-color: violet;*/
+}
+
+#text-sort {
+  font-size: 16px;
+}
+
+#sort-by {
+  font-size: 12px;
+  color: grey;
+  border: none;
+  background-color: white;
+  margin-right: 5%;
+}
+
+#order {
+  font-size: 12px;
+  color: grey;
+  border: none;
+  background-color: white;
+}
+
+#category {
+  font-size: 12px;
+  color: grey;
+  border: none;
+  background-color: white;
+}
+
+#sort button {
+  font-size: 12px;
+  color: white;
+  border: none;
+  background-color: var(--secondary-color);
+}
+
+#section-receipt-overview {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  /*background-color: rgb(255, 238, 0);*/
+}
+
+#single-receipt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  border-bottom-width: thin;
+}
+
+#btn-receipt-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*background-color: yellow;*/
+  margin: 5px;
+  width: 20%;
+  height: 100px;
+}
+
+#receipt-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  /*background-color: orange;*/
+  width: 66%;
+  height: 100px;
+}
+
+#receipt-title-amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  /*background-color: white;*/
+  width: 100%;
+  height: 50%;
+}
+
+#text-title {
+  font-size: 16px;
+  font-weight: 700;
+  /*background-color: black;*/
+  width: 75%;
+}
+
+#text-amount {
+  font-size: 12px;
+  /*background-color: darkgreen;*/
+  width: 25%;
+}
+
+#update-delete-receipt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  /*background-color: red;*/
+  width: 13%;
+  height: 100px;
+}
+
+#text-category {
+  font-size: 10px;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+#text-date {
+  font-size: 10px;
+  width: 50%;
+}
+
+#btn-update-receipt {
+  background: none;
+  border: none;
+  margin: 5px 0px;
+}
+#btn-delete-receipt {
+  background: none;
+  border: none;
+  margin: 5px 0px;
+}
+
+/*#btn-add-receipt {
+  background: greenyellow;
+  position: sticky;
+  top: 400px;
+  left: 500px;
+}*/
+
+#btn-add-receipt img {
+  height: 80px;
+  /*background: pink;*/
+  position: sticky;
+  bottom: 50%;
+  left: 500px;
+}
+
 /* The Modal (background) */
 .modal {
   display: block; /* Hidden by default */
