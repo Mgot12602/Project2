@@ -1,7 +1,7 @@
 :root {
-  --background-color: #073b4c;
-  --primary-color: #ffd166;
-  --secondary-color: #06d6a0;
+  --background-color: #000000;
+  --primary-color: #ff74c8;
+  --secondary-color: #60d937;
   /* Example: We need to use color: var(--background-color) to use the background color; */
   /* Example: We need to use color: var(--primary-color) to use the primary color; */
   /* Example: We need to use color: var(--secondary-color) to use the secondary color; */
