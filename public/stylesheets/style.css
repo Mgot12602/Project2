@@ -479,6 +479,14 @@ img {
   border: none;
 }
 
+.update-receipt-form select {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 4px 4px purple;
+  border: none;
+}
+
 .details-receipt-container {
   height: 85vh;
   width: 100%;
