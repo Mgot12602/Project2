@@ -55,6 +55,7 @@ a {
   height: 5vh;
   min-height: 30px;
   margin: 0;
+  color: white;
 }
 
 .nav-nav--login {
@@ -74,6 +75,15 @@ a {
 
 .login-container-blackblock {
   height: 10vh;
+  min-width: 400px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.signup-container-blackblock {
+  height: 40vh;
+  min-height: 350px;
   min-width: 400px;
   background-color: black;
   display: flex;
