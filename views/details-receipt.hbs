@@ -1,13 +1,15 @@
-<h2>RECEIPT DETAILS</h2>
+<div class="details-receipt-container">
 
-<h3>{{receiptDetails.title}}</h3>
+  <h3 class="details-receipt-title">{{receiptDetails.title}}</h3>
 
-<img src="{{receiptDetails.image}}" alt="receipt image">
+  <img class="details-receipt-image" src=" {{receiptDetails.image}}" alt="receipt image" style="width:380px;">
 
-<p>Category: {{receiptDetails.category}}</p>
+  <p>Category: <span style="color:var(--secondary-color)">{{receiptDetails.category}}</span></p>
 
-<p>Date: {{receiptDetails.date}}</p>
+  <p>Date: <span style="color:var(--secondary-color)">{{receiptDetails.date}}</span></p>
 
-<p>Amount in €: {{receiptDetails.amount}}</p>
+  <p>Amount: <span style="color:var(--secondary-color)">{{receiptDetails.amount}}</span> €</p>
 
-<p>Comment: {{receiptDetails.comment}}</p>
+  <p>Comment: <span style="color:var(--secondary-color)">{{receiptDetails.comment}}</span></p>
+</div>
+{{!-- <a href="/main/{{receiptDetails._id}}/update-receipt">Update receipt</a> --}}

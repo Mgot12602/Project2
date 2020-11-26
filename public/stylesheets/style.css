@@ -137,7 +137,16 @@ a {
   margin: 0 auto;
   width: 200px;
 }
+.signup-register-img-block {
+  margin: 0 auto;
+  width: 400px;
+}
+
 .login-register-img-block a img {
+  position: absolute;
+  bottom: 0;
+}
+.signup-register-img-block a img {
   position: absolute;
   bottom: 0;
 }
@@ -250,4 +259,26 @@ img {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.details-receipt-title {
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.details-receipt-container {
+  height: 85vh;
+  width: 100%;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.details-receipt-image {
+  margin: 10px auto;
+  width: 380px;
+}
+
+.details-receipt-info {
+  color: var(--primary-color);
 }
