@@ -19,7 +19,7 @@ router.get("/", isLoggedIn, (req, res) => {
       console.log("What we get after populating:", populatedUser);
       const receipts = populatedUser[0].receipts;
       console.log("receipts: ", receipts);
-      let pageTitle = "Overview";
+      let pageTitle = "OVERVIEW";
       res.render("overview-receipts", { receipts, pageTitle: pageTitle });
     })
     .catch((err) => {
@@ -62,7 +62,7 @@ router.post("/search", isLoggedIn, (req, res) => {
       console.log("What we get after populating:", populatedUser);
       const receipts = populatedUser[0].receipts;
       console.log("receipts: ", receipts);
-      let pageTitle = "Overview";
+      let pageTitle = "OVERVIEW";
       res.render("overview-receipts", { receipts, pageTitle: pageTitle });
     })
     .catch((err) => {

@@ -62,7 +62,7 @@ router.post(
 //GET AND UPDATE RECEIPT DETAILS
 router.get("/:id/update-receipt", isLoggedIn, (req, res) => {
   const id = req.params.id;
-  let pageTitle = "RECEIPT DETAILS";
+  let pageTitle = "UPDATE RECEIPT";
   Receipt.findById(id)
     .then((receiptDetails) => {
       console.log("Receipt:", receiptDetails);
